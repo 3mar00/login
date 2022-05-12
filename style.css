@@ -1,0 +1,170 @@
+        @font-face {
+            font-family: text;
+            src: url(text.ttf)
+        }
+        
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(755deg, #144b48, #2cc990);
+        }
+        
+        * {
+            padding: 0;
+            margin: 0;
+            border: none;
+            outline: none;
+            font-family: text;
+            box-sizing: border-box;
+        }
+        
+        label {
+            color: #fff;
+        }
+        
+        .pass1,
+        .pass2 {
+            margin-right: 2px;
+        }
+        
+        .insid i:nth-child(1) {
+            padding: 6px;
+            background: #fff;
+        }
+        
+        .more {
+            display: flex;
+        }
+        
+        .send {
+            padding: 4px;
+            margin: 8px;
+            font-size: 20px;
+            color: #fff;
+            background: #fc6042;
+            border-radius: 2px;
+        }
+        
+        hr {
+            flex: 1;
+            border: solid 1px #222222;
+            background: #222222;
+        }
+        
+        input {
+            background: none;
+            flex: 1;
+            margin: 2px;
+            margin: 6px;
+        }
+        
+        .insid {
+            display: flex;
+            background: #fcb941;
+            min-width: 100%;
+            border-radius: 3rem;
+            align-items: center;
+            justify-content: center;
+            outline: #fff solid 1px;
+            overflow: hidden;
+        }
+        
+        form {
+            padding: 10px;
+            border-radius: 4px;
+            background: #912f00;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        form>div {
+            margin: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            width: 100%;
+        }
+        
+        .orlist {
+            flex-direction: column;
+            display: flex;
+            justify-content: space-between;
+            background: #2150d4;
+            padding: 6px;
+            border-radius: 2px;
+            width: max-content;
+        }
+        
+        .orlist>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            height: 32px;
+            transition: .5s;
+            font-size: 20px;
+            padding: 6px;
+            border-radius: 3px;
+            position: relative;
+            width: max-content;
+            cursor: pointer;
+        }
+        
+        .with-g {
+            color: #ada2a2 !important;
+        }
+        
+        .or {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+        
+        .orlist>div:after {
+            content: '';
+            opacity: 0;
+            transition: .5s;
+        }
+        
+        .orlist>div:hover::after {
+            content: attr(data-text);
+            background: var(--i);
+            position: absolute;
+            left: 44px;
+            width: max-content;
+            padding: 4px;
+            opacity: 1;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 2px;
+        }
+        
+        .orlist>div:hover {
+            background: var(--i);
+        }
+        
+        @media (max-width:548px) {
+            .more {
+                flex-direction: column;
+            }
+            .orlist,
+            .or {
+                flex-direction: row;
+            }
+            .orlist {
+                width: 100%;
+            }
+            .orlist>div:hover::after {
+                content: attr(data-text);
+                position: absolute;
+                left: 50%;
+                top: -100%;
+                transform: translateX(-50%);
+            }
+        }
